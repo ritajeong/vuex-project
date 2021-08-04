@@ -38,8 +38,10 @@ export default {
         address: this.address,
         src: this.src,
       };
-      this.addUsers(userObj)//여기서 넘긴 인자가 store.js의 mutations-addUsers-payload로 전달됨
       //EventBus.$emit("signUp", userObj);
+      //this.addUsers(userObj)//여기서 넘긴 인자가 store.js의 mutations-addUsers-payload로 전달됨
+      //this.$store.commit('addUsers', userObj) //'addUsers'라는 mutations를 사용할 것인데, userObj를 payload로 전달
+      this.$store.dispatch('addUsers',userObj) //(dispatch니까) store의 'addUsers'라는 함수를 호출하고, userObj를 payload로 전달
       this.clearForm();
 
     },

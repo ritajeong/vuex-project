@@ -40,14 +40,23 @@ export default new Vuex.Store({
       });
       return count;
     },
-    percentOfSeoul: (state, getters) =>{ //state와 꼭 함께 써야함
-      return Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
-    }
+    percentOfSeoul: (state, getters) => {
+      //state와 꼭 함께 써야함
+      return Math.round((getters.countOfSeoul / getters.allUsersCount) * 100);
+    },
   },
   mutations: {
-    addUsers:(state, payload)=>{ //state에 payload를 붙여서 변경시킴
-      state.allUsers.push(payload)
-    }
+    addUsers: (state, payload) => {
+      //state에 payload를 붙여서 변경시킴
+      state.allUsers.push(payload);
+    },
   },
-  actions: {},
+  actions: {
+    addUsers: ({ commit }, payload) => {
+      // 원래 인자로 context, payload
+      // context를 간단히 쓰기 위해 객체 형태로 {commit}으로 작성
+      // {commit}, payload
+      commit('addUsers', payload);
+    },
+  },
 });
