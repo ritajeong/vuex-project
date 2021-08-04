@@ -17,6 +17,7 @@
 <script>
 import { EventBus } from "@/main.js";
 import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -29,7 +30,8 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['addUsers']),
+    //...mapMutations(['addUsers']), //store에서는 addUsers로 중복되어도 상관없음. 그러나 컴포넌트 내에서 addUsers로 중복되기때문에 주석처리함
+    ...mapActions(['addUsers']),
     signUp() {
       let userObj = {
         userId: this.userId,
@@ -41,7 +43,8 @@ export default {
       //EventBus.$emit("signUp", userObj);
       //this.addUsers(userObj)//여기서 넘긴 인자가 store.js의 mutations-addUsers-payload로 전달됨
       //this.$store.commit('addUsers', userObj) //'addUsers'라는 mutations를 사용할 것인데, userObj를 payload로 전달
-      this.$store.dispatch('addUsers',userObj) //(dispatch니까) store의 'addUsers'라는 함수를 호출하고, userObj를 payload로 전달
+      //this.$store.dispatch('addUsers',userObj) //(dispatch니까) store의 'addUsers'라는 함수를 호출하고, userObj를 payload로 전달
+      this.addUsers(userObj)
       this.clearForm();
 
     },
