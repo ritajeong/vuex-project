@@ -12,6 +12,11 @@ export default new Vuex.Store({
     ]
 
   },
+  getters:{
+    allUsersCount: function(state){
+      return state.allUsers.length
+    }
+  },
   mutations: {
 
   },
