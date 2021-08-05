@@ -6,38 +6,38 @@
 - 6강 Mutations  
 - 7강 Actions  
 
-## 디렉터리 구조
+## 디렉터리 구조  
+  
+│  App.vue 							# 최상위  
+│  main.js  
+│  router.js 							# 각각의 route 주소 설정  
+│  store.js  
+│  
+├─assets  
+│      logo.png  
+│      logo.svg  
+│  
+├─components					# **기능** 단위  
+│  └─Users  
+│          AllUsers.vue				# 모든 유저의 목록  
+│          SignUp.vue				  # 회원가입 기능  
+│  
+├─plugins  
+│      vuetify.js  
+│  
+└─views								# **레이아웃**만 포함  
+        Home.vue					# Home 화면   
+        Users.vue					 # Users 목록을 보여줌  
 
-│  App.vue 							# 최상위
-│  main.js
-│  router.js 							# 각각의 route 주소 설정
-│  store.js
-│
-├─assets
-│      logo.png
-│      logo.svg
-│
-├─components					# **기능** 단위
-│  └─Users
-│          AllUsers.vue				# 모든 유저의 목록
-│          SignUp.vue				  # 회원가입 기능
-│
-├─plugins
-│      vuetify.js
-│
-└─views								# **레이아웃**만 포함
-        Home.vue					# Home 화면 
-        Users.vue					 # Users 목록을 보여줌
-
-
+  
 
 ### tip
 
-$store, $router, $route 등 달러표시는 main.js에 적용되어있는 것
+$store, $router, $route 등 달러표시는 main.js에 적용되어있는 것  
 
 # 📌State
 
-store의 data역할
+store의 data역할  
 
 # 📌getters
 
