@@ -89,10 +89,7 @@ mutation에 비동기 로직들이 포함되면, 같은 값에 대해 여러 개
 
 비동기 로직은 actions에서 다룬다.
 
-````javascript
-```javascript
-
-```
+````javascript 
 
 state를 변화시키는 것은 일단 mutations에 넣는다.
 
